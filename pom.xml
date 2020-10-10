@@ -133,6 +133,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
 		<dependency>
@@ -156,6 +157,14 @@
 	<!-- 指明编译的时候也要把xml文件、配置文件放进去-->
 	<build>
 		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>

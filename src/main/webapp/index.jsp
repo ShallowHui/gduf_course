@@ -28,22 +28,30 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a></li>
+                <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
+            </ul>
+
+        </nav>
         <div id="text" style="padding-top: 150px; text-align: center; color: white"></div>
         <div class="container" style="width: 600px; padding-top: 50px">
-            <form action="${pageContext.request.contextPath}/" onsubmit="return checkLoginForm()" method="post">
+            <form action="${pageContext.request.contextPath}/login" onsubmit="return checkLoginForm()" method="post">
                 <table class="table table-hover table-dark" style="border-radius:20px">
                     <tbody>
                         <tr>
                             <td style="border-top: none">用户名:</td>
                             <td style="border-top: none">
-                                <input name="" id="usr" type="text" class="form-control" style="height: 40px">
+                                <input name="no" id="usr" type="text" class="form-control" style="height: 40px">
                                 <div id="usrAlert"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>密码:</td>
                             <td>
-                                <input id="pwd" name="" type="password" class="form-control" style="height: 40px">
+                                <input id="pwd" name="password" type="password" class="form-control" style="height: 40px">
                                 <div id="pwdAlert"></div>
                             </td>
                             <td>
@@ -54,7 +62,7 @@
                         <tr>
                             <td>验证码:</td>
                             <td>
-                                <input id="checkCode" type="text" class="form-control" style="height: 40px">
+                                <input id="checkCode"  name="checkCode" type="text" placeholder="任意大小写" class="form-control" style="height: 40px">
                                 <div id="checkCodeAlert"></div>
                             </td>
                             <td>
@@ -64,9 +72,10 @@
                         </tr>
                         <tr>
                             <td colspan="2" data-toggle="tooltip" title="选择以什么身份登录系统" data-placement="bottom">
-                                <select class="form-control" name="">
-                                    <option value="">学生/教师</option>
-                                    <option value="">管理员</option>
+                                <select class="form-control" name="client">
+                                    <option value="学生">学生</option>
+                                    <option value="教师">教师</option>
+                                    <option value="管理员">管理员</option>
                                 </select>
                             </td>
                             <td><button type="submit" class="btn btn-primary">登&emsp;&emsp;录</button></td>
@@ -74,6 +83,10 @@
                     </tbody>
                 </table>
             </form>
+            <div class="${requestScope.classattr}">
+                <button type="button" class="close" data-dismiss="alert">${requestScope.buttomText}</button>
+                <strong>${requestScope.message}</strong>
+            </div>
         </div>
     </body>
 </html>

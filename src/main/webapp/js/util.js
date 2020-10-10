@@ -18,7 +18,7 @@ window.onload = function() {
             divTyping.innerHTML = typeString.slice(0, i--) + '|'
             divTyping.style.fontSize = "30px"
             divTyping.style.fontFamily = "sans-serif"
-            timer = setTimeout(typeReverse,350)
+            timer = setTimeout(typeReverse,150)
         }else{
             typing()
         }
@@ -46,30 +46,30 @@ function checkLoginForm() {
     if($("#usr").val()==="" || $("#pwd").val()==="" || $("#checkCode").val()==="") {
         if ($("#usr").val() === ""){
             $("#usrAlert").attr({
-                "class":"alert alert-danger",
+                "class":"alert alert-warning alert-dismissible fade show",
                 "style":"text-align: center; padding: 0px; margin: 0px auto; margin-top: 3px; width: 200px;"
             })
-            $("#usrAlert").html("<strong>错误!</strong>用户名不能为空!")
+            $("#usrAlert").html("<strong>用户名不能为空!</strong>")
         } else {
             $("#usrAlert").removeAttr("class")
             $("#usrAlert").html("")
         }
         if ($("#pwd").val() === ""){
             $("#pwdAlert").attr({
-                "class":"alert alert-danger",
+                "class":"alert alert-warning alert-dismissible fade show",
                 "style":"text-align: center; padding: 0px; margin: 0px auto; margin-top: 3px; width: 200px;"
             })
-            $("#pwdAlert").html("<strong>错误!</strong>密码不能为空!")
+            $("#pwdAlert").html("<strong>密码不能为空!</strong>")
         } else {
             $("#pwdAlert").removeAttr("class")
             $("#pwdAlert").html("")
         }
         if ($("#checkCode").val() === ""){
             $("#checkCodeAlert").attr({
-                "class":"alert alert-danger",
+                "class":"alert alert-warning alert-dismissible fade show",
                 "style":"text-align: center; padding: 0px; margin: 0px auto; margin-top: 3px; width: 200px;"
             })
-            $("#checkCodeAlert").html("<strong>错误!</strong>验证码不能为空!")
+            $("#checkCodeAlert").html("<strong>验证码不能为空!</strong>")
         } else {
             $("#checkCodeAlert").removeAttr("class")
             $("#checkCodeAlert").html("")

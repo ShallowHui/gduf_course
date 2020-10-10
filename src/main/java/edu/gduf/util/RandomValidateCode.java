@@ -44,7 +44,7 @@ public class RandomValidateCode {
             randomString=drowString(g,randomString,i);
         }
         session.removeAttribute(RANDOMCODEKEY);
-        session.setAttribute(RANDOMCODEKEY, randomString);
+        session.setAttribute(RANDOMCODEKEY, randomString.toLowerCase());
         //System.out.println("刷新后的验证码："+randomString+"、" + session.getAttribute(RANDOMCODEKEY));
         // 因为加载jsp页面比加载session快一些，所以在jsp页上从session中获得的这个验证码比是实际生成图片的上一次，而不是本次。但如验证验证码工作放在后台则无问题。
         g.dispose();
