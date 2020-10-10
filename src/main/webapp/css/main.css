@@ -1,0 +1,10 @@
+@charset "UTF-8";
+*{
+    padding: 0px;
+    margin: 0px;
+    font-size: 16px;
+}
+body{
+    background: url("../img/index.jpg") fixed;
+    background-size: cover;
+}
