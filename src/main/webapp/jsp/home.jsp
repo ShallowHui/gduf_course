@@ -25,6 +25,42 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
+            </ul>
+            <div style="margin-left: 1286px">
+                <a href="/course/" class="btn btn-secondary" role="button">退出登录</a>
+            </div>
+        </nav>
+        <div id="demo" class="carousel slide" data-ride="carousel" style="width: 1000px; margin: 0 auto; padding-top: 20px;">
+            <!-- 指示符 -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <!-- 轮播图片 -->
+            <div class="carousel-inner" style="height: 200px">
+                <div class="carousel-item active">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                </div>
+            </div>
+            <!-- 左右切换按钮 -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
     </body>
 </html>

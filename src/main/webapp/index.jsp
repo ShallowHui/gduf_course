@@ -28,14 +28,13 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a></li>
-                <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
-            </ul>
-
-        </nav>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
+        </ul>
+    </nav>
         <div id="text" style="padding-top: 150px; text-align: center; color: white"></div>
         <div class="container" style="width: 600px; padding-top: 50px">
             <form action="${pageContext.request.contextPath}/login" onsubmit="return checkLoginForm()" method="post">
