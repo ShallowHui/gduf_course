@@ -16,39 +16,53 @@
         <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script src="../js/main.js"></script>
-        <script defer="defer" id="ribbon_piao" mobile="true" src="../js/caidai.js"></script>
-        <link rel="stylesheet" href="../css/backgroundcolor.css">
+        <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script defer="defer" id="ribbon_piao" mobile="true" src="${pageContext.request.contextPath}/js/caidai.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/backgroundcolor.css">
 	</head>
 	<body>
         <!-- 导航栏 -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="../img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
+            <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
                 <li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
                 <li class="nav-item dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">选课中心</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">开设课程</button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">我的课程</a>
+                        <a class="dropdown-item" href="#">课程管理</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div id="body-wrap">
             <div class="content">
+	            <nav class="breadcrumb">
+				  <a class="breadcrumb-item" href="#">&lt;&lt;&nbsp;返回</a>
+				</nav>
                 <form action="${pageContext.request.contextPath}/" method="post">
-                    <table class="table table-hover table-primary" style="border-radius:20px; text-align:center; line-height:inherit">
+                    <table class="table table-hover table-primary" style="border-radius:20px; text-align:center">
                         <tbody>
                             <tr>
                                 <td style="border-top: none">课程名称:</td>
                                 <td style="border-top: none"><input type="text" class="form-control"></td>
                             </tr>
                             <tr>
+                                <td style="border-top: none">开课时间:</td>
+                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：2020上学期"></td>
+                            </tr>
+                            <tr>
+                                <td style="border-top: none">上课时间:</td>
+                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：周一第一节"></td>
+                            </tr>
+                            <tr>
                                 <td colspan="2">
                                     <label for="comment">课程简介:</label>
                                     <textarea class="form-control" rows="5" id="comment"></textarea>
                                 </td>
+                            </tr>
+                            <tr>
+								<td colspan="2"><button type="submit" class="btn btn-primary">创建课程</button></td>
                             </tr>
                         </tbody>
                     </table>

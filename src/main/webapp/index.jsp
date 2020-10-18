@@ -12,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>登录</title>
+        <title>首页</title>
 
         <!-- 新 Bootstrap4 核心 CSS 文件 -->
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,14 +23,14 @@
         <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script src="js/main.js"></script>
-        <script src="js/util.js"></script>
-        <link rel="stylesheet" href="css/main.css">
+        <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/util.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
     </head>
     <body>
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="height: 76px">
-        <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
+        <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
         </ul>

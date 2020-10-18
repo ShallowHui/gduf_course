@@ -32,7 +32,7 @@ public class LoginController
 				{
 					request.setAttribute("classattr","alert alert-danger alert-dismissible fade show");
 					request.setAttribute("buttomText","&times;");
-					request.setAttribute("message","用户名或者密码错误！请重新输入");
+					request.setAttribute("message","用户名或者密码错误！请重新输入或选择正确的身份");
 					return "forward:/";
 				}
 			}
@@ -48,7 +48,7 @@ public class LoginController
 				{
 					request.setAttribute("classattr","alert alert-danger alert-dismissible fade show");
 					request.setAttribute("buttomText","&times;");
-					request.setAttribute("message","用户名或者密码错误！请重新输入");
+					request.setAttribute("message","用户名或者密码错误！请重新输入或选择正确的身份");
 					return "forward:/";
 				}
 			}
@@ -64,7 +64,7 @@ public class LoginController
 				{
 					request.setAttribute("classattr","alert alert-danger alert-dismissible fade show");
 					request.setAttribute("buttomText","&times;");
-					request.setAttribute("message","用户名或者密码错误！请重新输入");
+					request.setAttribute("message","用户名或者密码错误！请重新输入或选择正确的身份");
 					return "forward:/";
 				}
 			}	

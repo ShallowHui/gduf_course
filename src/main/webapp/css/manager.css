@@ -1,0 +1,9 @@
+@charset "UTF-8";
+table{
+	width: 1200px;
+	text-align:center;
+	line-height: 50px;
+}
+table th{
+	border-bottom: 2px solid red;
+}

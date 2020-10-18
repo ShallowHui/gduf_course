@@ -21,14 +21,14 @@
         <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script src="js/main.js"></script>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/home.css">
+        <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
     </head>
     <body>
         <!-- 导航栏 -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
+            <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
               	<li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
@@ -44,13 +44,13 @@
             <!-- 轮播图片 -->
             <div class="carousel-inner" style="height:300px; border-radius: 25px">
                 <div class="carousel-item active">
-                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg" width="1600px">
+                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg" width="1600px">
+                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg" width="1600px">
+                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
                 </div>
             </div>
             <!-- 左右切换按钮 -->
