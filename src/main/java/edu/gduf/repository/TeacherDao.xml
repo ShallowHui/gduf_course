@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gduf.repository.TeacherDao">
+    <select id="findCourse" resultType="course" parameterType="String">
+        select * from course where c_no=#{cno}
+    </select>
+    <select id="getTeacher" resultType="Teacher"  parameterType="String" >
+    select *
+    from teacher
+    where t_no=#{no}
+    </select>
+
+    <insert id="addCourse" parameterType="course" >
+        insert into course(c_no,c_name,ac_time,c_comment,t_no,hc_time)
+        values(#{c_no},#{c_name},#{ac_time},#{c_comment},#{t_no},#{hc_time})
+    </insert>
+
+    <select id="getCourses" parameterType="String" resultType="course">
+    select *
+    from course
+    where t_no=#{no}
+    </select>
+
+    <select id="getClass" parameterType="String" resultType="student">
+        select student.* from student,stu_course where c_no=#{cno} and student.s_no = stu_course.s_no
+    </select>
+
+    <delete id="deleteStudent" parameterType="String" >
+        delete from stu_course
+        where s_no=#{no}
+    </delete>
+</mapper>

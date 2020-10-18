@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.gduf.repository.AdminDao">
+    <insert id="registerTeacher" parameterType="Teacher">
+        insert into teacher(t_no,t_name,t_office,t_phone,depart,t_passwprd)
+        values(#{t_no},#{t_name},#{t_office},#{t_phone},#{depart},#{t_passwprd})
+    </insert>
+
+    <insert id="registerStudent" parameterType="Student">
+        insert into student(s_no,s_name,s_sex,s_birthday,s_grade,s_address,s_phone,s_email,s_password)
+        values(#{s_no},#{s_name},#{s_sex},#{s_birthday},#{s_grade},#{s_address},#{s_phone},#{s_email},#{s_password})
+    </insert>
+
+    <select id="getTeachers" resultType="Teacher">
+        select * from teacher
+    </select>
+
+    <select id="getStudents" resultType="student">
+        select * from student
+    </select>
+
+    <update id="updateTeacher" parameterType="Teacher">
+        update teacher
+        set t_password=#{t_password},t_name=#{t_name},t_office=#{t_office},t_phone=#{t_phone},depart=#{depart}
+        where t_no=#{no}
+    </update>
+
+    <update id="updateStudent" parameterType="student">
+        update student
+        set s_name=#{s_name},s_sex=#{s_sex},s_birthday=#{s_birthday},s_grade=#{s_grade},
+        s_address=#{s_address},s_phone=#{s_phone},s_email=#{e_mail},s_password=#{s_password}
+        where s_no=#{no}
+    </update>
+
+    <delete id="deleteTeacher" parameterType="String">
+        delete from teacher
+        where t_no=#{no}
+    </delete>
+
+    <delete id="deleteStudent" parameterType="String">
+        delete from student
+        where s_no=#{no}
+    </delete>
+
+    <select id="getTeacherNo" resultType="String">
+        select t_no
+        from teacher
+    </select>
+
+    <select id="getStudentNo" resultType="String">
+        select s_no
+        from student
+    </select>
+
+
+
+</mapper>

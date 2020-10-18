@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="courses" value="${sessionScope.courses}" scope="page"></c:set>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>主页</title>
+        <title>班级管理</title>
 
         <!-- 新 Bootstrap4 核心 CSS 文件 -->
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
@@ -32,9 +31,10 @@
                 <li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/thome">主页</a></li>
                 <li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/getTeacher">个人中心</a></li>
                 <li class="nav-item dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">课程管理</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">班级管理</button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="${pageContext.request.contextPath}/toAddCourse">开设课程</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/showcourses">课程管理</a>
                     </div>
                 </li>
             </ul>
@@ -43,19 +43,25 @@
             <div class="content" style="width:1200px">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
+                    <li class="breadcrumb-item active"><a href="#">${requestScope.course.c_name}</a></li>
                 </ol>
-				<table>
-					<th>课程代码</th><th>课程名字</th><th>开课时间</th><th>上课时间</th><th>查看班级</th>
-                    <c:forEach items="${courses}" var="course">
+                <form action="${pageContext.request.contextPath}/deleteStudent?cno=${requestScope.course.c_no}" method="post">
+                    <table>
+                        <th>学号</th><th>姓名</th><th>性别</th><th>年级</th><th>清退</th>
+                        <c:forEach items="${sessionScope.students}" var="student">
+                            <tr>
+                                <td>${student.s_no}</td>
+                                <td>${student.s_name}</td>
+                                <td>${student.s_sex}</td>
+                                <td>${student.s_grade}</td>
+                                <td><input type="checkbox" name="sno" value="${student.s_no}"></td>
+                            </tr>
+                        </c:forEach>
                         <tr>
-                            <td>${course.c_no}</td>
-                            <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
-                            <td>${course.ac_time}</td>
-                            <td>${course.hc_time}</td>
-                            <td><a href="${pageContext.request.contextPath}/showclass?cno=${course.c_no}">班级</a>
+                            <td colspan="5"><button type="submit" class="btn btn-primary">删除学生</button></td>
                         </tr>
-                    </c:forEach>
-				</table>
+                    </table>
+                </form>
             </div>
         </div>
 	</body>

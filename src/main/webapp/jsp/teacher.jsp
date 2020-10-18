@@ -31,7 +31,7 @@
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
-              	<li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
+              	<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/getTeacher">个人中心</a></li>
             </ul>
         </nav>
         <div id="demo" class="carousel slide" data-ride="carousel" style="width:1600px; margin:0 auto; padding-top:20px">
@@ -63,8 +63,8 @@
         </div>
         <table>
         	<tr>
-        		<td><a class="buttomLink" href="#">开设课程</a></td>
-        		<td><a class="buttomLink" href="#">课程管理</a></td>
+        		<td><a class="buttomLink" href="${pageContext.request.contextPath}/toAddCourse">开设课程</a></td>
+        		<td><a class="buttomLink" href="${pageContext.request.contextPath}/showtcourses">课程管理</a></td>
         		<td><a class="buttomLink" href="#">...</a></td>
         	</tr>
         </table>

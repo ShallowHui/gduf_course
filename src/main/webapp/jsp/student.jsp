@@ -65,7 +65,7 @@
         	<tr>
         		<td><a class="buttomLink" href="#">选课中心</a></td>
         		<td><a class="buttomLink" href="#">我的课表</a></td>
-        		<td><a class="buttomLink" href="#">..</a></td>
+        		<td><a class="buttomLink" href="#">...</a></td>
         	</tr>
         </table>
     </body>

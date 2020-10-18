@@ -26,39 +26,40 @@
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
-                <li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
+                <li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/thome">主页</a></li>
+                <li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/getTeacher">个人中心</a></li>
                 <li class="nav-item dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">开设课程</button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">课程管理</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/showcourses">课程管理</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div id="body-wrap">
             <div class="content">
-	            <nav class="breadcrumb">
-				  <a class="breadcrumb-item" href="#">&lt;&lt;&nbsp;返回</a>
-				</nav>
-                <form action="${pageContext.request.contextPath}/" method="post">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
+                </ol>
+                <form action="${pageContext.request.contextPath}/openclass" method="post">
                     <table class="table table-hover table-primary" style="border-radius:20px; text-align:center">
                         <tbody>
                             <tr>
                                 <td style="border-top: none">课程名称:</td>
-                                <td style="border-top: none"><input type="text" class="form-control"></td>
+                                <td style="border-top: none"><input type="text" class="form-control" name="c_name"></td>
                             </tr>
                             <tr>
                                 <td style="border-top: none">开课时间:</td>
-                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：2020上学期"></td>
+                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：2020上学期" name="ac_time"></td>
                             </tr>
                             <tr>
                                 <td style="border-top: none">上课时间:</td>
-                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：周一第一节"></td>
+                                <td style="border-top: none"><input type="text" class="form-control" placeholder="如：周一第一节" name="hc_time"></td>
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     <label for="comment">课程简介:</label>
-                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                    <textarea class="form-control" rows="5" id="comment" name="c_comment"></textarea>
                                 </td>
                             </tr>
                             <tr>

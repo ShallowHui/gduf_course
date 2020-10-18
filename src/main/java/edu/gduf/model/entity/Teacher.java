@@ -3,6 +3,7 @@ package edu.gduf.model.entity;
 public class Teacher 
 {
 	private String t_no;
+	private String t_password;
 	private String t_name;
 	private String t_office;
 	private String t_phone;

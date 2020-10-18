@@ -5,6 +5,7 @@ public class Student
 	
 	private String s_name;
 	private String s_no;
+	private String s_password;
 	private String s_sex;
 	private String s_birthday;
 	private String s_grade;

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="teacher" value="${sessionScope.teacher}" scope="page"></c:set>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,14 +28,14 @@
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
-                <li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
+				<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/thome">主页</a></li>
             </ul>
         </nav>
         <div id="body-wrap">    
         	<div class="content">
-	            <nav class="breadcrumb">
-					 <a class="breadcrumb-item" href="#">&lt;&lt;&nbsp;返回</a>
-				</nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
+				</ol>
             	<table class="table table-hover table-info table-bordered" style="text-align:center; width:400px; margin: 0 auto">
             		<tbody>
             			<tr>
@@ -41,23 +43,23 @@
             			</tr>
             			<tr>
             				<td>姓名：</td>
-            				<td>GDUF</td>
+            				<td>${teacher.t_name}</td>
             			</tr>
             			<tr>
             				<td>教师号：</td>
-            				<td>GDUF</td>
+            				<td>${teacher.t_no}</td>
             			</tr>
             			<tr>
             				<td>教师办公室：</td>
-            				<td>GDUF</td>
+            				<td>${teacher.t_office}</td>
             			</tr>
             			<tr>
             				<td>电话：</td>
-            				<td>GDUF</td>
+            				<td>${teacher.t_phone}</td>
             			</tr>
             			<tr>
             				<td>院系：</td>
-            				<td>GDUF</td>
+            				<td>${teacher.depart}</td>
             			</tr>
             		</tbody>
             	</table>
