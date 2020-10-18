@@ -1,0 +1,91 @@
+@charset "UTF-8";
+*{
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+}
+body{
+  padding-bottom: 50px;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(247, 149, 51, 0.1) 0,
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1) 100%
+  );
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(247, 149, 51, 0.1) 0,
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1) 100%
+  );
+  background: -o-linear-gradient(
+    0deg,
+    rgba(247, 149, 51, 0.1) 0,
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1) 100%
+  );
+  background: -ms-linear-gradient(
+    0deg,
+    rgba(247, 149, 51, 0.1) 0,
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(247, 149, 51, 0.1) 0,
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1) 100%
+  );
+}
+#body-wrap{
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 1500px;
+  background: white;
+  border-radius: 25px;
+  margin-top: 50px;
+  box-shadow: -2px 0px 10px #d6cdcd,   /*左边阴影*/
+              0px -2px 10px #d6cdcd,  /*上边阴影*/
+              2px 0px 10px #d6cdcd,  /*右边阴影*/
+              0px 2px 10px #d6cdcd; /*下边阴影*/
+  transition: box-shadow 0.5s;
+}
+#body-wrap:hover{
+  box-shadow: -15px 0px 25px #d6cdcd,   /*左边阴影*/
+              0px -15px 25px #d6cdcd,  /*上边阴影*/
+              15px 0px 25px #d6cdcd,  /*右边阴影*/
+              0px 15px 25px #d6cdcd; /*下边阴影*/
+}
+.navbar{
+  height: 76px;
+}
+.content{
+  margin: 0 auto;
+  width: 800px;
+}

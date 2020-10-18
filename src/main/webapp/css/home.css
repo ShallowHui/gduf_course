@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.buttomLink{
+	width: 	160px;
+	height: 160px;
+	margin: 0 auto;
+	display: block;
+	background-image: linear-gradient( 135deg, #FFA8A8 10%, #FCFF00 100%);
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	line-height: 160px;
+	border-radius: 50%;
+	border: none;
+	transition: width 0.5s,height 0.5s,line-height 0.5s,box-shadow 0.5s;
+}
+table a:hover{
+	text-decoration: none;
+	color: white;
+	width: 200px;
+	height: 200px;
+	line-height:200px;
+	box-shadow: -10px 0px 20px #888888,   /*左边阴影*/
+				0px -10px 20px #888888,  /*上边阴影*/
+				10px 0px 20px #888888,  /*右边阴影*/
+				0px 10px 20px #888888; /*下边阴影*/
+}
+table{
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 1200px;
+}
+td{
+	height: 210px;
+	width: 400px;
+}
+.navbar{
+	height: 76px;
+}

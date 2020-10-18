@@ -20,4 +20,12 @@
         <property name="prefix" value="/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <!-- 配置自定义类型的数据转换器 -->
+    <bean id="myConversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="edu.gduf.converter.DateConverter" />
+            </set>
+        </property>
+    </bean>
 </beans>

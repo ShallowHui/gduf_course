@@ -23,19 +23,18 @@
 
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
         <!-- 导航栏 -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a>
+            <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
+                <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
+              	<li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
             </ul>
-            <div style="margin-left: 1286px">
-                <a href="/course/" class="btn btn-secondary" role="button">退出登录</a>
-            </div>
         </nav>
-        <div id="demo" class="carousel slide" data-ride="carousel" style="width: 1000px; margin: 0 auto; padding-top: 20px;">
+        <div id="demo" class="carousel slide" data-ride="carousel" style="width:1600px; margin:0 auto; padding-top:20px">
             <!-- 指示符 -->
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -43,15 +42,15 @@
                 <li data-target="#demo" data-slide-to="2"></li>
             </ul>
             <!-- 轮播图片 -->
-            <div class="carousel-inner" style="height: 200px">
+            <div class="carousel-inner" style="height:300px; border-radius: 25px">
                 <div class="carousel-item active">
-                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg" width="1600px">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg" width="1600px">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg" width="1600px">
                 </div>
             </div>
             <!-- 左右切换按钮 -->
@@ -62,5 +61,12 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
+        <table>
+        	<tr>
+        		<td><a class="buttomLink" href="#">选课中心</a></td>
+        		<td><a class="buttomLink" href="#">我的课表</a></td>
+        		<td><a class="buttomLink" href="#">..</a></td>
+        	</tr>
+        </table>
     </body>
 </html>

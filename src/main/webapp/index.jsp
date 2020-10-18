@@ -29,19 +29,19 @@
     </head>
     <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#"><img src="img/gduf.jpg" style="width:40px"></a>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="height: 76px">
+        <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="navbar-brand" href="#">GDUF</a></li>
+            <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
         </ul>
     </nav>
         <div id="text" style="padding-top: 150px; text-align: center; color: white"></div>
         <div class="container" style="width: 600px; padding-top: 50px">
             <form action="${pageContext.request.contextPath}/login" onsubmit="return checkLoginForm()" method="post">
-                <table class="table table-hover table-dark" style="border-radius:20px">
+                <table class="table table-hover table-dark" style="border-radius:20px; text-align:center">
                     <tbody>
                         <tr>
-                            <td style="border-top: none">用户名:</td>
+                            <td style="border:none">用户名:</td>
                             <td style="border-top: none">
                                 <input name="no" id="usr" type="text" class="form-control" style="height: 40px">
                                 <div id="usrAlert"></div>

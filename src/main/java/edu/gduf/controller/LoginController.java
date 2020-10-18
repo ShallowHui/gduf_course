@@ -26,7 +26,7 @@ public class LoginController
 				if(admin!= null)
 				{
 					session.setAttribute("ID_SESSION",admin);
-					return "home";
+					return "admin";
 				}
 				else 
 				{
@@ -42,7 +42,7 @@ public class LoginController
 				if(t!= null)
 				{
 					session.setAttribute("ID_SESSION",t);
-					return "home";
+					return "teacher";
 				}
 				else 
 				{
@@ -58,7 +58,7 @@ public class LoginController
 				if(s!= null)
 				{
 					session.setAttribute("ID_SESSION",s);
-					return "home";
+					return "student";
 				}
 				else 
 				{
