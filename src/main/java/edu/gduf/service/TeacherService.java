@@ -13,4 +13,6 @@ public interface TeacherService {
     public  List<Course> getCourses(@Param("no") String t_no);//查看自己的授课课程
     public List<Student> getClass(@Param("no") String c_no);//课程班级学生
     public int deleteStudent(@Param("no") String s_no);//教师删除学生强制退课
+    PageBean<Student> findByPage(int currentPage,String c_no);
+    public int getCount(@Param("cno") String c_no);//获取指定课程班级学生人数
 }

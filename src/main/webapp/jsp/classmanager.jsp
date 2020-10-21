@@ -45,23 +45,54 @@
                     <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
                     <li class="breadcrumb-item active"><a href="#">${requestScope.course.c_name}</a></li>
                 </ol>
-                <form action="${pageContext.request.contextPath}/deleteStudent?cno=${requestScope.course.c_no}" method="post">
-                    <table>
-                        <th>学号</th><th>姓名</th><th>性别</th><th>年级</th><th>清退</th>
-                        <c:forEach items="${sessionScope.students}" var="student">
-                            <tr>
-                                <td>${student.s_no}</td>
-                                <td>${student.s_name}</td>
-                                <td>${student.s_sex}</td>
-                                <td>${student.s_grade}</td>
-                                <td><input type="checkbox" name="sno" value="${student.s_no}"></td>
-                            </tr>
+                <c:if test="${sessionScope.pageList.students.size() == 0}">
+                    <div class="alert alert-warning">
+                        <strong>抱歉！没有查询到信息。</strong>
+                    </div>
+                </c:if>
+                <c:if test="${sessionScope.pageList.students.size() != 0}">
+                    <form action="${pageContext.request.contextPath}/deleteStudent?cno=${requestScope.course.c_no}" method="post">
+                        <table>
+                            <th>学号</th><th>姓名</th><th>性别</th><th>年级</th><th>清退</th>
+                                <c:forEach items="${sessionScope.pageList.students}" var="student">
+                                    <tr>
+                                        <td>${student.s_no}</td>
+                                        <td>${student.s_name}</td>
+                                        <td>${student.s_sex}</td>
+                                        <td>${student.s_grade}</td>
+                                        <td><input type="checkbox" name="sno" value="${student.s_no}"></td>
+                                    </tr>
+                                </c:forEach>
+                                <tr>
+                                    <td colspan="5"><button type="submit" class="btn btn-primary">删除学生</button></td>
+                                </tr>
+                        </table>
+                    </form>
+                    <ul class="pagination">
+                        <c:set var="currentpage" value="${sessionScope.pageList.currPage}"></c:set>
+                        <c:set var="totalpage" value="${sessionScope.pageList.totalPage}"></c:set>
+                        <c:if test="${currentpage == 1}">
+                            <li class="page-item disabled"><a class="page-link">上一页</a></li>
+                        </c:if>
+                        <c:if test="${currentpage > 1}">
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/showclass?currentPage=${currentpage-1}&cno=${requestScope.course.c_no}">上一页</a></li>
+                        </c:if>
+                        <c:forEach begin="1" end="${totalpage}" var="page">
+                            <c:if test="${page == currentpage}">
+                                <li class="page-item active"><a class="page-link" href="${pageContext.request.contextPath}/showclass?currentPage=${page}&cno=${requestScope.course.c_no}">${page}</a></li>
+                            </c:if>
+                            <c:if test="${page != currentpage}">
+                                <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/showclass?currentPage=${page}&cno=${requestScope.course.c_no}">${page}</a></li>
+                            </c:if>
                         </c:forEach>
-                        <tr>
-                            <td colspan="5"><button type="submit" class="btn btn-primary">删除学生</button></td>
-                        </tr>
-                    </table>
-                </form>
+                        <c:if test="${currentpage == totalpage}">
+                            <li class="page-item disabled"><a class="page-link">下一页</a></li>
+                        </c:if>
+                        <c:if test="${currentpage < totalpage}">
+                            <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/showclass?currentPage=${currentpage+1}&cno=${requestScope.course.c_no}">下一页</a></li>
+                        </c:if>
+                    </ul>
+                </c:if>
             </div>
         </div>
 	</body>

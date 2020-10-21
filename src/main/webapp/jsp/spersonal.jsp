@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="teacher" value="${sessionScope.teacher}" scope="page"></c:set>
+<c:set var="student" value="${sessionScope.student}" scope="page"></c:set>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -43,24 +43,36 @@
             			</tr>
             			<tr>
             				<td>姓名：</td>
-            				<td>${teacher.t_name}</td>
+            				<td>${student.s_name}</td>
             			</tr>
             			<tr>
-            				<td>教师号：</td>
-            				<td>${teacher.t_no}</td>
+            				<td>学号：</td>
+            				<td>${student.s_no}</td>
             			</tr>
             			<tr>
-            				<td>教师办公室：</td>
-            				<td>${teacher.t_office}</td>
+            				<td>性别：</td>
+            				<td>${student.s_sex}</td>
             			</tr>
             			<tr>
-            				<td>电话：</td>
-            				<td>${teacher.t_phone}</td>
+            				<td>生日：</td>
+            				<td>${student.s_birthday}</td>
             			</tr>
             			<tr>
-            				<td>院系：</td>
-            				<td>${teacher.depart}</td>
+            				<td>年级：</td>
+            				<td>${student.s_grade}</td>
             			</tr>
+						<tr>
+							<td>家庭住址：</td>
+							<td>${student.s_address}</td>
+						</tr>
+						<tr>
+							<td>手机号：</td>
+							<td>${student.s_phone}</td>
+						</tr>
+						<tr>
+							<td>邮箱：</td>
+							<td>${student.s_email}</td>
+						</tr>
             		</tbody>
             	</table>
             </div>

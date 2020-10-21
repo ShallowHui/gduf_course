@@ -36,3 +36,24 @@ td{
 .navbar{
 	height: 76px;
 }
+#alert{
+	position: absolute;
+	border-top: 1px dodgerblue solid;
+	border-bottom: 1px dodgerblue solid;
+	background-color: white;
+	border-radius: 20px;
+	width: 300px;
+	height: 150px;
+	text-align: center;
+	z-index: 100;
+	left: 43%;
+	top: 40%;
+	box-shadow: -10px 0px 20px #888888,   /*左边阴影*/
+				0px -10px 20px #888888,  /*上边阴影*/
+				10px 0px 20px #888888,  /*右边阴影*/
+				0px 10px 20px #888888; /*下边阴影*/
+}
+#alert h5{
+	text-align: center;
+	line-height: 90px;
+}

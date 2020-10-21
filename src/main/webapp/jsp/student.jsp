@@ -22,6 +22,7 @@
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/alert.js"></script>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
     </head>
@@ -31,7 +32,7 @@
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
-              	<li class="nav-item"><a class="navbar-brand" href="#">个人中心</a></li>
+              	<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/getStudent">个人中心</a></li>
             </ul>
         </nav>
         <div id="demo" class="carousel slide" data-ride="carousel" style="width:1600px; margin:0 auto; padding-top:20px">
@@ -64,9 +65,13 @@
         <table>
         	<tr>
         		<td><a class="buttomLink" href="#">选课中心</a></td>
-        		<td><a class="buttomLink" href="#">我的课表</a></td>
-        		<td><a class="buttomLink" href="#">...</a></td>
+        		<td><a class="buttomLink" href="${pageContext.request.contextPath}/getCourses">我的课表</a></td>
+        		<td><a class="buttomLink" href="#" onclick="openAlert()">...</a></td>
         	</tr>
         </table>
+        <div id="alert" style="display: none">
+            <h5>更多功能，敬请期待...</h5>
+            <button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
+        </div>
     </body>
 </html>

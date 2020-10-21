@@ -7,6 +7,7 @@ import edu.gduf.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -82,10 +83,11 @@ public class TeacherController
 
 
     @RequestMapping("/showclass")//查询课程班级学生
-    public String getClass(HttpServletRequest request,String cno)
+    public String getClass(HttpServletRequest request,String cno,@RequestParam(value="currentPage", defaultValue="1", required=false)int currentPage)
     {
         request.setAttribute("course",teacherService.findCourse(cno));
         request.getSession().setAttribute("students",teacherService.getClass(cno));
+        request.getSession().setAttribute("pageList",teacherService.findByPage(currentPage,cno));
         return "classmanager";
     }
 

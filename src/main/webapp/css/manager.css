@@ -7,3 +7,20 @@ table{
 table th{
 	border-bottom: 2px solid red;
 }
+.alert{
+	margin: 0 auto;
+	width: 300px;
+	text-align: center;
+}
+.pagination{
+	display: table;
+	text-align: left;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.pagination li{
+	float: left;
+}
+td .btn{
+	margin-top: 30px;
+}

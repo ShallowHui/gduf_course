@@ -9,8 +9,8 @@
     </select>
 
     <select id="getCourses" parameterType="String" resultType="Course">
-        select c.c_name,c.hc_time from stu_course sc ,course c
-        where sc.cno=c.cno and sc.s_no=#{no}
+        select c.* from stu_course sc ,course c
+        where sc.c_no=c.c_no and sc.s_no=#{no}
     </select>
 
     <delete id="deteleStudent" parameterType="String" >
@@ -20,12 +20,12 @@
 
     <select id="getCourseTime" parameterType="String" resultType="String">
         select hc_time from course
-        where  cno=#{cno}
+        where  c_no=#{cno}
     </select>
 
     <select id="getCoursesTime" parameterType="String" resultType="String">
         select c.hc_time from course c,stu_course sc
-        where c.cno=sc.cno and sc.sno=#{no}
+        where c.c_no=sc.c_no and sc.s_no=#{no}
     </select>
 
     <insert id="insertCourse" parameterType="String">

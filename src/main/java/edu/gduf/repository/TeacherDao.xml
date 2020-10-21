@@ -30,4 +30,15 @@
         delete from stu_course
         where s_no=#{no}
     </delete>
+
+    <select id="findByPage" parameterType="Map" resultType="student">
+        select student.* from student,stu_course where c_no=#{cno} and student.s_no = stu_course.s_no
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
+
+    <select id="getCount" parameterType="String" resultType="int">
+        select count(*) from student,stu_course where c_no=#{cno} and student.s_no = stu_course.s_no
+    </select>
 </mapper>

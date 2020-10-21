@@ -6,6 +6,7 @@ import edu.gduf.model.entity.Student;
 import edu.gduf.model.entity.Teacher;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface TeacherDao {
@@ -15,4 +16,6 @@ public interface TeacherDao {
     public List<Course> getCourses(@Param("no") String t_no);//查看自己的授课课程
     public List<Student> getClass(@Param("cno") String c_no);//课程班级学生
     public int deleteStudent(@Param("no") String s_no);//教师删除学生强制退课
+    public List<Student> findByPage(HashMap<String, Object> map); //分页显示学生信息
+    public int getCount(@Param("cno") String c_no);//获取指定课程班级学生人数
 }

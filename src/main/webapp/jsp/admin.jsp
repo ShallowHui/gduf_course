@@ -22,6 +22,7 @@
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/alert.js"></script>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
     </head>
@@ -71,5 +72,9 @@
         		<td><a class="buttomLink" href="#">...</a></td>
         	</tr>
         </table>
+        <div id="alert" style="display: none">
+            <h5>更多功能，敬请期待...</h5>
+            <button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
+        </div>
     </body>
 </html>
