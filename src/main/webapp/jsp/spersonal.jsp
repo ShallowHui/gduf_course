@@ -28,7 +28,7 @@
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
-				<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/thome">主页</a></li>
+				<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/shome">主页</a></li>
             </ul>
         </nav>
         <div id="body-wrap">    

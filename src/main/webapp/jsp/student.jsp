@@ -64,7 +64,7 @@
         </div>
         <table>
         	<tr>
-        		<td><a class="buttomLink" href="#">选课中心</a></td>
+        		<td><a class="buttomLink" href="${pageContext.request.contextPath}/courses">选课中心</a></td>
         		<td><a class="buttomLink" href="${pageContext.request.contextPath}/getCourses">我的课表</a></td>
         		<td><a class="buttomLink" href="#" onclick="openAlert()">...</a></td>
         	</tr>

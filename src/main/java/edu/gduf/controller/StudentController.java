@@ -7,8 +7,12 @@ import edu.gduf.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 @Controller
 public class StudentController {
@@ -37,43 +41,36 @@ public class StudentController {
         request.getSession().setAttribute("courses",courses);
         return "mineclass";
     }
-
-    /*@RequestMapping("deleteStudent")//删除班级学生
-    public String deleteStudent(HttpServletRequest request,String s_no)
+    //选课页面分页控制层
+    @RequestMapping("/courses")
+    public String main(@RequestParam(value="currentPage", defaultValue="1", required=false)int currentPage, HttpServletRequest request)
     {
-        int i=studentService.deleteStudent(s_no);
-        if(i==0)
-        {
-            request.setAttribute("message","删除失败！！！！！！！");
-        }
-        else{
-            request.setAttribute("message","删除成功！！！！！！！");
-        }
-
-        return "";
+        request.getSession().setAttribute("PageList",studentService.findByPageCourse(currentPage));
+        return "selectcourse";
     }
-
-    @RequestMapping("toInsertCourse")//跳转到选课界面
-    public String toInsertCourse()
-    {
-        return "";
-    }
-    @RequestMapping("") //学生选课
-    public String insertCourse(HttpServletRequest request,String c_no)
-    {
-        String courseTime=studentService.getCourseTime(c_no);
+    @RequestMapping("/selectCourse") //学生选课
+    public Object insertCourse(HttpServletRequest request, String cno, HttpServletResponse response) throws ServletException, IOException {
+        String courseTime=studentService.getCourseTime(cno);
         String s_no=((Stu)request.getSession().getAttribute("ID_SESSION")).getS_no();
         List<String> coursesTime = studentService.getCoursesTime(s_no);
         for (String s : coursesTime) {
             if(s.equals(courseTime))//若时间冲突，选课失败
             {
                 request.getSession().setAttribute("message","选课失败，时间冲突!");
-                return "";
+                return "redirect:getCourses";
             }
         }
-        studentService.insertCourse(c_no,s_no);
+        studentService.insertCourse(cno,s_no);
         request.getSession().setAttribute("message","选课成功!");
-        return ""; //跳转到成功界面
-    }*/
-
+        return "redirect:getCourses";//请求成功，跳转到已选课程页面查看结果
+    }
+    @RequestMapping("deleteCourse")//学生退课
+    public String deleteCourse(HttpServletRequest request,String[]  c_no)
+    {
+        String s_no=((Stu)request.getSession().getAttribute("ID_SESSION")).getS_no();
+        for (String cno : c_no) {
+            studentService.deleteCourse(cno,s_no);
+        }
+        return "redirect:getCourses";
+    }
 }

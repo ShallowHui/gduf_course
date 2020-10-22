@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">我的课表</button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="${pageContext.request.contextPath}/">选课中心</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/courses">选课中心</a>
                     </div>
                 </li>
             </ul>
@@ -49,7 +49,7 @@
                     </div>
                 </c:if>
                 <c:if test="${sessionScope.courses.size() != 0}">
-                    <form action="${pageContext.request.contextPath}/" method="post">
+                    <form action="${pageContext.request.contextPath}/deleteCourse" method="post">
                         <table>
                             <th>课程代码</th><th>课程名字</th><th>开课时间</th><th>上课时间</th><th>退课</th>
                             <c:forEach items="${sessionScope.courses}" var="course">
@@ -58,7 +58,7 @@
                                     <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
                                     <td>${course.ac_time}</td>
                                     <td>${course.hc_time}</td>
-                                    <td><input type="checkbox" name="cno" value="${course.c_no}"></td>
+                                    <td><input type="checkbox" name="c_no" value="${course.c_no}"></td>
                                 </tr>
                             </c:forEach>
                             <tr>

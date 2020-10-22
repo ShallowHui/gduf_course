@@ -1,7 +1,7 @@
 package edu.gduf.service;
 
 import edu.gduf.model.entity.Course;
-import edu.gduf.model.entity.Stu_course;
+import edu.gduf.model.entity.PageCourse;
 import edu.gduf.model.entity.Student;
 import org.apache.ibatis.annotations.Param;
 
@@ -15,5 +15,7 @@ public interface StudentService {
         public List<String> getCoursesTime(@Param("no") String s_no);//查询学生课表里的所有上课时间
         public int insertCourse(@Param("cno") String c_no, @Param("sno") String s_no); //学生选课
         public List<Course> getAllCourses();
-
+        public PageCourse<Course> findByPageCourse(int currentPage); //分页显示课程信息
+        public int getCount();//获取指定课程数
+        public int deleteCourse(@Param("cno") String c_no,@Param("sno") String s_no);//学生退课
 }

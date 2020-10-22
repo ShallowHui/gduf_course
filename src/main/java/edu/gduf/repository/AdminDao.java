@@ -1,6 +1,5 @@
 package edu.gduf.repository;
 
-import com.sun.xml.internal.bind.v2.model.core.BuiltinLeafInfo;
 import edu.gduf.model.entity.*;
 import org.apache.ibatis.annotations.Param;
 
