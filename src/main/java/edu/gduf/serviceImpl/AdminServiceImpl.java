@@ -14,79 +14,66 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminDao adminDao;
 
-    @Override
-    public int registerTeacher(Teacher teacher) {
-        return adminDao.registerTeacher(teacher);
-    }
-
-    @Override
-    public int registerStudent(Student student) {
-        return adminDao.registerStudent(student);
-    }
-
-    @Override
-    public List<Teacher> getTeachers() {
-        return adminDao.getTeachers();
-    }
-
-    @Override
-    public List<Student> getStudents() {
-        return adminDao.getStudents();
-    }
-
-    @Override
-    public int updateTeacher(Teacher teacher) {
-        return adminDao.updateTeacher(teacher);
-    }
-
-    @Override
-    public int updateStudent(Student student) {
-        return adminDao.registerStudent(student);
-    }
+ //***
+	@Override
+	public int registerTeacher(String no, String name) {
+	
+		return adminDao.registerTeacher(no, name);
+	}
 
 
-    @Override
-    public int deleteTeacher(String t_no) {
-        return adminDao.deleteTeacher(t_no);
-    }
+	@Override
+	public int registerStudent(String no, String name) {
+		// TODO Auto-generated method stub
+		return adminDao.registerStudent(no, name);
+	}
 
-    @Override
-    public int deleteStudent(String s_no) {
-        return adminDao.deleteTeacher(s_no);
-    }
 
-    @Override
-    public List<Bulletin> getBulletins() {
-        return null;
-    }
+	@Override
+	public int insertTea(String no, String password) {
+		// TODO Auto-generated method stub
+		return adminDao.insertTea(no, password);
+	}
 
-    @Override
-    public Bulletin getBulletinById(int id) {
-        return null;
-    }
 
-    @Override
-    public int addBulletin(Bulletin bulletin) {
-        return 0;
-    }
+	@Override
+	public int insertStu(String no, String password) {
+		// TODO Auto-generated method stub
+		return adminDao.insertStu(no, password);
+	}
 
-    @Override
-    public int updateBulletin(Bulletin bulletin) {
-        return 0;
-    }
 
-    @Override
-    public int deleteBulletin(Bulletin bulletin) {
-        return 0;
-    }
+	@Override
+	public int findCno(String no) {
+		// TODO Auto-generated method stub
+		return adminDao.findCno(no);
+	}
 
-    @Override
-    public List<String> getTeacherNo() {
-        return adminDao.getTeacherNo();
-    }
 
-    @Override
-    public List<String> getStudentNo() {
-        return adminDao.getStudentNo();
-    }
+	@Override
+	public int findSno(String no) {
+		// TODO Auto-generated method stub
+		return adminDao.findSno(no);
+	}
+
+
+	@Override
+	public int addBulletin(String Bname, String memo,String flag) {
+		// TODO Auto-generated method stub
+		return adminDao.addBulletin(Bname,memo,flag);
+	}
+
+
+	@Override
+	public int deleteBulletin(int id) {
+		// TODO Auto-generated method stub
+		return adminDao.deleteBulletin(id);
+	}
+
+
+	@Override
+	public List<Bulletin> getBulletins() {
+		// TODO Auto-generated method stub
+		return adminDao.getBulletins();
+	}
 }

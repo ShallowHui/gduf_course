@@ -18,13 +18,14 @@
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <script src="${pageContext.request.contextPath}/js/main.js"></script>
+        <script src="${pageContext.request.contextPath}/js/message.js"></script>
         <script defer="defer" id="ribbon_piao" mobile="true" src="${pageContext.request.contextPath}/js/caidai.js"></script>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/backgroundcolor.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/manager.css">
 	</head>
 	<body>
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
@@ -40,10 +41,6 @@
         </nav>
         <div id="body-wrap">
             <div class="content" style="width:1200px">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
-                    <li class="breadcrumb-item active"><a>选课中心</a></li>
-                </ol>
                 <c:if test="${sessionScope.PageList.courses.size() == 0}">
                     <div class="alert alert-warning">
                         <strong>抱歉！没有查询到信息。</strong>
@@ -58,7 +55,7 @@
                                 <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
                                 <td>${course.ac_time}</td>
                                 <td>${course.hc_time}</td>
-                                <td colspan="5"><button type="button" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/selectCourse?cno=${course.c_no}'">申请课程</button></td>
+                                <td><button  style="margin-top: 0px" type="button" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/selectCourse?cno=${course.c_no}'">申请课程</button></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -88,6 +85,10 @@
                     </ul>
                 </c:if>
             </div>
+        </div>
+        <div id="alert" style="display: none">
+            <p>${requestScope.message}</p>
+            <button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
         </div>
 	</body>
 </html>

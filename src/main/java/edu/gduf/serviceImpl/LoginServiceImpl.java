@@ -7,6 +7,9 @@ import edu.gduf.model.entity.Stu;
 import edu.gduf.model.entity.Tea;
 import edu.gduf.repository.LoginDao;
 import edu.gduf.service.LoginService;
+
+import java.util.List;
+
 @Service
 public class LoginServiceImpl implements LoginService
 {
@@ -30,4 +33,9 @@ public class LoginServiceImpl implements LoginService
 		return loginDao.studentLogin(s_no, s_password);
 	}
 
+	@Override
+	public List<String> getBulletin(String flag) {
+		// TODO Auto-generated method stub
+		return loginDao.getBulletin(flag);
+	}
 }

@@ -70,7 +70,6 @@ public class TeacherServiceImpl implements TeacherService
         pageBean.setStudents(lists);
 
         return pageBean;
-
     }
 
     public int getCount(String c_no) {

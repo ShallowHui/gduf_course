@@ -2,7 +2,7 @@
 table{
 	width: 1200px;
 	text-align:center;
-	line-height: 50px;
+	line-height: 60px;
 }
 table th{
 	border-bottom: 2px solid red;
@@ -23,4 +23,25 @@ table th{
 }
 td .btn{
 	margin-top: 30px;
+}
+#alert{
+	position: absolute;
+	background-color: white;
+	border-radius: 20px;
+	width: 300px;
+	height: 150px;
+	text-align: center;
+	z-index: 100;
+	left: 43%;
+	top: 40%;
+	box-shadow: -2px 0px 10px #d6cdcd,   /*左边阴影*/
+				0px -2px 10px #d6cdcd,  /*上边阴影*/
+				2px 0px 10px #d6cdcd,  /*右边阴影*/
+				0px 2px 10px #d6cdcd; /*下边阴影*/
+}
+#alert p{
+	height: 90px;
+	display: block;
+	text-align: center;
+	line-height: 90px;
 }

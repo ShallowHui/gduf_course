@@ -9,23 +9,19 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface AdminService {
-    public int registerTeacher(Teacher teacher);
-    public int registerStudent(Student student);
-
-    public List<Teacher> getTeachers();
-    public List<Student> getStudents();
-
-    public int updateTeacher(Teacher teacher);
-    public int updateStudent(Student student);
-
-    public int deleteTeacher(@Param("no") String t_no);
-    public int deleteStudent(@Param("no") String s_no);
-
-    public List<Bulletin> getBulletins();
-    public Bulletin getBulletinById(@Param("id") int id);
-    public int addBulletin(Bulletin bulletin);
-    public int updateBulletin(Bulletin bulletin);
-    public int deleteBulletin(Bulletin bulletin);
-    public List<String> getTeacherNo();
-    public List<String> getStudentNo();
+	
+	 public int registerTeacher(@Param("no") String no, @Param("name") String name);
+	 public int registerStudent(@Param("no") String no, @Param("name") String name);
+	 public int insertTea(@Param("no") String no, @Param("password") String password);
+	 public int insertStu(@Param("no") String no, @Param("password") String password);
+	 public int findCno(@Param("no") String no);
+	 public int findSno(@Param("no") String no);
+	 
+	 public int addBulletin(@Param("Bname") String Bname, @Param("memo") String memo, @Param("flag") String flag);
+	 public int deleteBulletin(@Param("id") int id);
+	 public List<Bulletin> getBulletins();
+	
+	
+	
+  
 }

@@ -2,57 +2,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.gduf.repository.AdminDao">
-    <insert id="registerTeacher" parameterType="Teacher">
-        insert into teacher(t_no,t_name,t_office,t_phone,depart,t_passwprd)
-        values(#{t_no},#{t_name},#{t_office},#{t_phone},#{depart},#{t_passwprd})
+<!-- 新注册 -->
+    <insert id="registerTeacher" parameterType="String">
+     insert into teacher(t_no,t_name)
+     values(#{no},#{name})
     </insert>
-
-    <insert id="registerStudent" parameterType="Student">
-        insert into student(s_no,s_name,s_sex,s_birthday,s_grade,s_address,s_phone,s_email,s_password)
-        values(#{s_no},#{s_name},#{s_sex},#{s_birthday},#{s_grade},#{s_address},#{s_phone},#{s_email},#{s_password})
+    <insert id="registerStudent" parameterType="String">
+     insert into student(s_no,s_name)
+     values(#{no},#{name})
     </insert>
-
-    <select id="getTeachers" resultType="Teacher">
-        select * from teacher
-    </select>
-
-    <select id="getStudents" resultType="student">
-        select * from student
-    </select>
-
-    <update id="updateTeacher" parameterType="Teacher">
-        update teacher
-        set t_password=#{t_password},t_name=#{t_name},t_office=#{t_office},t_phone=#{t_phone},depart=#{depart}
-        where t_no=#{no}
-    </update>
-
-    <update id="updateStudent" parameterType="student">
-        update student
-        set s_name=#{s_name},s_sex=#{s_sex},s_birthday=#{s_birthday},s_grade=#{s_grade},
-        s_address=#{s_address},s_phone=#{s_phone},s_email=#{e_mail},s_password=#{s_password}
-        where s_no=#{no}
-    </update>
-
-    <delete id="deleteTeacher" parameterType="String">
-        delete from teacher
-        where t_no=#{no}
-    </delete>
-
-    <delete id="deleteStudent" parameterType="String">
-        delete from student
-        where s_no=#{no}
-    </delete>
-
-    <select id="getTeacherNo" resultType="String">
-        select t_no
+    <insert id="insertTea" parameterType="String">
+     insert into tea(t_no,t_password)
+     values(#{no},#{password})
+    </insert>
+    <insert id="insertStu" parameterType="String">
+     insert into stu(s_no,s_password)
+     values(#{no},#{password})
+    </insert>
+    <select id="findCno" resultType="int">
+        select count(*)
         from teacher
+        where t_no=#{no}
     </select>
-
-    <select id="getStudentNo" resultType="String">
-        select s_no
+     <select id="findSno" resultType="int">
+        select count(*)
         from student
+        where s_no=#{no}
     </select>
-
-
-
+ <!-- 公告模块 -->
+ 
+     <insert id="addBulletin" parameterType="String">
+     insert into bulletin(Bname,memo,flag)
+     values(#{Bname},#{memo},#{flag})
+     </insert>
+     
+     <select id="getBulletins" resultType="bulletin">
+     select * form bulletin
+     </select>
+     
+     <delete id="deleteBulletin" parameterType="int">
+     delete bulletin
+      where id=#{id}
+     </delete>
 </mapper>

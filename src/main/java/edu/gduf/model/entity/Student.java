@@ -2,7 +2,6 @@ package edu.gduf.model.entity;
 //学生信息表
 public class Student
 {
-	
 	private String s_name;
 	private String s_no;
 	private String s_password;

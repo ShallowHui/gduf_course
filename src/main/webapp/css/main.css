@@ -8,3 +8,6 @@ body{
     background: url("../img/index.jpg") fixed;
     background-size: cover;
 }
+nav{
+    opacity: 0.9;
+}

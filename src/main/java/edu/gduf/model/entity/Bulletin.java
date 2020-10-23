@@ -2,11 +2,28 @@ package edu.gduf.model.entity;
 
 import java.util.Date;
 
+
+
 public class Bulletin 
 {
 	private Integer id;
-	private String content;
-	private Date time;
+	private String memo;
+	private String Bname;
+	private Date creationtime;
+	private String flag;
+	public String getBname() {
+		return Bname;
+	}
+	public void setBname(String bname) {
+		Bname = bname;
+	}
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+	public String getFlag()
+	{
+		return flag;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -14,16 +31,16 @@ public class Bulletin
 		this.id = id;
 	}
 	public String getContent() {
-		return content;
+		return memo;
 	}
 	public void setContent(String content) {
-		this.content = content;
+		this.memo = content;
 	}
 	public Date getTime() {
-		return time;
+		return creationtime;
 	}
 	public void setTime(Date time) {
-		this.time = time;
+		this.creationtime = time;
 	}
-	
+
 }

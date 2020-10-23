@@ -20,4 +20,9 @@
     where t_no=#{no}
     and t_password=#{password}
     </select>
+    <select id="getBulletin" parameterType="String" resultType="String" >
+    select memo from bulletin
+    where flag= '0' or flag=#{flag}
+    limit 0,3
+    </select>
 </mapper>

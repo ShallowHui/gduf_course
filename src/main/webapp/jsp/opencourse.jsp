@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>主页</title>
+        <title>开设课程</title>
 
         <!-- 新 Bootstrap4 核心 CSS 文件 -->
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 	</head>
 	<body>
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
@@ -31,16 +31,13 @@
                 <li class="nav-item dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">开设课程</button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="${pageContext.request.contextPath}/showcourses">课程管理</a>
+                        <a class="dropdown-item" href="${pageContext.request.contextPath}/showtcourses">课程管理</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <div id="body-wrap">
             <div class="content">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
-                </ol>
                 <form action="${pageContext.request.contextPath}/openclass" method="post">
                     <table class="table table-hover table-primary" style="border-radius:20px; text-align:center">
                         <tbody>

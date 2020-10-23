@@ -24,7 +24,7 @@
 	</head>
 	<body>
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
@@ -40,9 +40,6 @@
         </nav>
         <div id="body-wrap">
             <div class="content" style="width:1200px">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="#" onclick="javascript:history.back(-1);">返回</a></li>
-                </ol>
                 <c:if test="${sessionScope.courses.size() == 0}">
                     <div class="alert alert-warning">
                         <strong>抱歉！没有查询到信息。</strong>

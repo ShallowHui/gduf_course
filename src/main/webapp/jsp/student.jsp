@@ -28,12 +28,14 @@
     </head>
     <body>
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>
               	<li class="nav-item"><a class="navbar-brand" href="${pageContext.request.contextPath}/getStudent">个人中心</a></li>
+                <li class="nav-item"><a class="navbar-brand" style="color: green">欢迎您，${sessionScope.indentity}同学</a></li>
             </ul>
+            <button type="button" class="btn btn-primary navbar-brand" onclick="window.location.href='${pageContext.request.contextPath}/loginout'">退出登录</button>
         </nav>
         <div id="demo" class="carousel slide" data-ride="carousel" style="width:1600px; margin:0 auto; padding-top:20px">
             <!-- 指示符 -->
@@ -46,12 +48,24 @@
             <div class="carousel-inner" style="height:300px; border-radius: 25px">
                 <div class="carousel-item active">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <div class="carousel-caption">
+                        <h3>公告</h3>
+                        <p>${sessionScope.bulletins.get(0)}</p>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <div class="carousel-caption">
+                        <h3>公告</h3>
+                        <p>${sessionScope.bulletins.get(1)}</p>
+                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <div class="carousel-caption">
+                        <h3>公告</h3>
+                        <p>${sessionScope.bulletins.get(2)}</p>
+                    </div>
                 </div>
             </div>
             <!-- 左右切换按钮 -->
@@ -70,7 +84,7 @@
         	</tr>
         </table>
         <div id="alert" style="display: none">
-            <h5>更多功能，敬请期待...</h5>
+            <p>更多功能，敬请期待...</p>
             <button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
         </div>
     </body>

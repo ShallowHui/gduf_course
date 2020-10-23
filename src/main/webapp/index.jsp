@@ -28,7 +28,7 @@
     </head>
     <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="height: 76px">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light" style="height: 76px">
         <a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank"><img src="${pageContext.request.contextPath}/img/gduf.jpg" style="width:50px; height:50px; border-radius:50%"></a>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="navbar-brand" href="https://www.gduf.edu.cn/" target="_blank">GDUF</a></li>

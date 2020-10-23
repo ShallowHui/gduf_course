@@ -56,13 +56,13 @@ public class StudentController {
         for (String s : coursesTime) {
             if(s.equals(courseTime))//若时间冲突，选课失败
             {
-                request.getSession().setAttribute("message","选课失败，时间冲突!");
-                return "redirect:getCourses";
+                request.setAttribute("message","选课失败，所选课程与已有课程时间冲突!");
+                return "forward:courses";
             }
         }
         studentService.insertCourse(cno,s_no);
-        request.getSession().setAttribute("message","选课成功!");
-        return "redirect:getCourses";//请求成功，跳转到已选课程页面查看结果
+        request.setAttribute("message","恭喜你，选课成功!");
+        return "forward:courses";
     }
     @RequestMapping("deleteCourse")//学生退课
     public String deleteCourse(HttpServletRequest request,String[]  c_no)
