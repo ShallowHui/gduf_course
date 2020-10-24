@@ -47,24 +47,12 @@
             <div class="carousel-inner" style="height:300px; border-radius: 25px">
                 <div class="carousel-item active">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
-                    <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(0)}</p>
-                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
-                    <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(1)}</p>
-                    </div>
                 </div>
                 <div class="carousel-item">
                     <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
-                    <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(2)}</p>
-                    </div>
                 </div>
             </div>
             <!-- 左右切换按钮 -->

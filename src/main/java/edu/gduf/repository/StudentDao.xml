@@ -52,4 +52,38 @@
         delete from stu_course
         where c_no=#{cno} and s_no=#{sno}
     </delete>
+    <select id="findByPageComment" parameterType="Map" resultType="comment">
+        select * from comment
+        where c_no=#{cno}
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
+    <select id="getCounts" parameterType="String" resultType="int">
+    select count(*)
+    from comment
+    where c_no=#{cno}
+    </select>
+    <insert id="addComment" parameterType="String">
+    insert into comment(c_no,s_no,comment)
+    values(#{cno},#{sno},#{comment})
+    </insert>
+    <select id="findCourseWithTname" resultMap="courseWithTeacherName">
+        select t_name,course.* from teacher,course where c_no = #{cno} and teacher.t_no = course.t_no
+    </select>
+    <resultMap id="courseWithTeacherName" type="courseWithTname">
+        <result property="t_name" column="t_name"/>
+        <association property="course" javaType="course">
+            <result property="c_name" column="c_name"/>
+            <result property="c_no" column="c_no"/>
+        </association>
+    </resultMap>
+    <select id="findCoursesLike" parameterType="String" resultType="course">
+    select * from course
+    where c_name like concat('%', #{cname}, '%') and ac_time='2020上学期'
+    </select>
+    <select id="findCoursesLikeT" parameterType="String" resultType="course">
+    select c.c_no,c.c_name,c.ac_time,c.hc_time from course c,teacher t
+    where c.t_no=t.t_no and t.t_name like concat('%', #{tname}, '%')
+    </select>
 </mapper>

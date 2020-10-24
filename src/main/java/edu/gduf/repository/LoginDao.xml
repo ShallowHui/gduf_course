@@ -20,9 +20,10 @@
     where t_no=#{no}
     and t_password=#{password}
     </select>
-    <select id="getBulletin" parameterType="String" resultType="String" >
-    select memo from bulletin
+    <select id="getBulletin" parameterType="String" resultType="bulletin" >
+    select memo,BName from bulletin
     where flag= '0' or flag=#{flag}
+    order by id desc
     limit 0,3
     </select>
 </mapper>

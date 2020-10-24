@@ -1,5 +1,6 @@
 package edu.gduf.serviceImpl;
 
+import edu.gduf.model.entity.Bulletin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import edu.gduf.model.entity.Admin;
@@ -34,7 +35,7 @@ public class LoginServiceImpl implements LoginService
 	}
 
 	@Override
-	public List<String> getBulletin(String flag) {
+	public List<Bulletin> getBulletin(String flag) {
 		// TODO Auto-generated method stub
 		return loginDao.getBulletin(flag);
 	}

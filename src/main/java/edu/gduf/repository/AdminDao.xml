@@ -32,8 +32,8 @@
  <!-- 公告模块 -->
  
      <insert id="addBulletin" parameterType="String">
-     insert into bulletin(Bname,memo,flag)
-     values(#{Bname},#{memo},#{flag})
+     insert into bulletin(BName,memo,flag)
+     values(#{BName},#{memo},#{flag})
      </insert>
      
      <select id="getBulletins" resultType="bulletin">

@@ -14,8 +14,7 @@ public interface AdminDao {
     public int findCno(@Param("no") String no);
     public int findSno(@Param("no") String no);
     
-    public int addBulletin(@Param("Bname") String Bname, @Param("memo") String memo, @Param("flag") String flag);
+    public int addBulletin(@Param("BName") String BName, @Param("memo") String memo, @Param("flag") String flag);
     public List<Bulletin> getBulletins();
     public int deleteBulletin(@Param("id") int id);
-    
 }

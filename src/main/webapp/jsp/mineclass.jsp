@@ -52,7 +52,7 @@
                             <c:forEach items="${sessionScope.courses}" var="course">
                                 <tr>
                                     <td>${course.c_no}</td>
-                                    <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
+                                    <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="${pageContext.request.contextPath}/courseinfo?cno=${course.c_no}">${course.c_name}</a></td>
                                     <td>${course.ac_time}</td>
                                     <td>${course.hc_time}</td>
                                     <td><input type="checkbox" name="c_no" value="${course.c_no}"></td>

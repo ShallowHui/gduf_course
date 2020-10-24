@@ -39,10 +39,10 @@
                 0px 2px 10px #d6cdcd; /*下边阴影*/
             }
             #alert p{
-                height: 90px;
+                height: 40px;
                 display: block;
                 text-align: center;
-                line-height: 90px;
+                line-height: 40px;
             }
         </style>
 	</head>
@@ -109,7 +109,13 @@
         </div>
         <div id="alert" style="display: none">
             <p>${requestScope.message}</p>
-            <button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
+            <c:if test="${requestScope.tno !=null}">
+                教师号为：${requestScope.tno}<br/>
+            </c:if>
+            <c:if test="${requestScope.sno !=null}">
+                学生号为：${requestScope.sno}<br/>
+            </c:if>
+            <br/><button type="button" class="btn btn-primary" onclick="closeAlert()">确认</button>
         </div>
 	</body>
 </html>

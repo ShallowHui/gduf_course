@@ -53,7 +53,8 @@ public class AdminController {
             }
     		adminService.registerTeacher(no,name);
     		adminService.insertTea(no, password);
-    		request.setAttribute("message","注册成功！！！");
+    		request.setAttribute("message","注册成功！");
+    		request.setAttribute("tno",no);
     		return "register";
     	}
     	else if(client.equals("学生"))//学生注册
@@ -77,7 +78,8 @@ public class AdminController {
             }
     		adminService.registerStudent(no, name);
     		adminService.insertStu(no, password);
-    		request.setAttribute("message","注册成功！！！");
+    		request.setAttribute("message","注册成功！");
+    		request.setAttribute("sno",no);
     		return "register";
     	}
     	}

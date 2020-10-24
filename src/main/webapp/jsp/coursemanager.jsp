@@ -52,7 +52,7 @@
                         <c:forEach items="${courses}" var="course">
                             <tr>
                                 <td>${course.c_no}</td>
-                                <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
+                                <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom">${course.c_name}</td>
                                 <td>${course.ac_time}</td>
                                 <td>${course.hc_time}</td>
                                 <td><a href="${pageContext.request.contextPath}/showclass?cno=${course.c_no}">班级</a>

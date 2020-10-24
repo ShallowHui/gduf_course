@@ -47,24 +47,24 @@
             <!-- 轮播图片 -->
             <div class="carousel-inner" style="height:300px; border-radius: 25px">
                 <div class="carousel-item active">
-                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <img src="${pageContext.request.contextPath}/img/background.jpg" width="100%" height="100%">
                     <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(0)}</p>
+                        <h1>${sessionScope.bulletins.get(0).BName}</h1>
+                        <p>${sessionScope.bulletins.get(0).memo}</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <img src="${pageContext.request.contextPath}/img/background.jpg" width="100%" height="100%">
                     <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(1)}</p>
+                        <h1>${sessionScope.bulletins.get(1).BName}</h1>
+                        <p>${sessionScope.bulletins.get(1).memo}</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="${pageContext.request.contextPath}/img/xiaoqing70.png" width="100%" height="100%">
+                    <img src="${pageContext.request.contextPath}/img/background.jpg" width="100%" height="100%">
                     <div class="carousel-caption">
-                        <h3>公告</h3>
-                        <p>${sessionScope.bulletins.get(2)}</p>
+                        <h1>${sessionScope.bulletins.get(2).BName}</h1>
+                        <p>${sessionScope.bulletins.get(2).memo}</p>
                     </div>
                 </div>
             </div>

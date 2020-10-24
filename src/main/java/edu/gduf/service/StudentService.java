@@ -1,8 +1,7 @@
 package edu.gduf.service;
 
-import edu.gduf.model.entity.Course;
-import edu.gduf.model.entity.PageCourse;
-import edu.gduf.model.entity.Student;
+import edu.gduf.model.entity.*;
+import edu.gduf.model.vo.CourseWithTname;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -18,4 +17,10 @@ public interface StudentService {
         public PageCourse<Course> findByPageCourse(int currentPage); //分页显示课程信息
         public int getCount();//获取指定课程数
         public int deleteCourse(@Param("cno") String c_no,@Param("sno") String s_no);//学生退课
+        public PageComment<Comment> findByPageComment(int currentPage, String c_no);
+        public int getCounts(@Param("cno") String c_no);//获取评论数
+        public int addComment(@Param("cno") String c_no, @Param("sno") String s_no,@Param("comment") String comment);
+        public CourseWithTname findCourseWithTname(String cno);
+        public List<Course> findCoursesLike(@Param("cname") String c_name);//根据课程名模糊查询课程
+        public List<Course> findCoursesLikeT(@Param("tname") String t_name);//根据教师名模糊查询课程
 }

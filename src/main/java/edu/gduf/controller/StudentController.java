@@ -1,6 +1,7 @@
 package edu.gduf.controller;
 
 import edu.gduf.model.entity.Course;
+import edu.gduf.model.entity.PageCourse;
 import edu.gduf.model.entity.Stu;
 import edu.gduf.model.entity.Student;
 import edu.gduf.service.StudentService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 @Controller
@@ -72,5 +74,40 @@ public class StudentController {
             studentService.deleteCourse(cno,s_no);
         }
         return "redirect:getCourses";
+    }
+    //分页评论
+    @RequestMapping("/courseinfo")
+    public String getComment(@RequestParam(value="currentPage", defaultValue="1", required=false)int currentPage,HttpServletRequest request,String cno)
+    {
+        request.setAttribute("course",studentService.findCourseWithTname(cno));
+        request.setAttribute("PageList",studentService.findByPageComment(currentPage,cno));
+        return "courseinfo";
+    }
+    @RequestMapping("/addcomment")
+    public String addComment(HttpServletRequest request,String c_no,String s_no,String comment)
+    {
+        int i =studentService.addComment(c_no,s_no,comment);
+        if(i!=0)
+        {
+            request.setAttribute("message","评论成功!");
+            return "forward:courseinfo?cno="+c_no;
+        }
+        else
+        {
+            request.setAttribute("message","评论失败!");
+            return "forward:courseinfo?cno="+c_no;
+        }
+    }
+    @RequestMapping("/findCoursesLike")
+    public String findCoursesLike(String name, HttpSession session)
+    {
+        List<Course> courses = studentService.findCoursesLike(name);
+        List<Course> courses1= studentService.findCoursesLikeT(name);
+        courses.addAll(courses1);
+        System.out.println(courses.size());
+        PageCourse<Course> courseList = new PageCourse<>();
+        courseList.setCourses(courses);
+        session.setAttribute("PageList",courseList);
+        return "selectcourse";
     }
 }

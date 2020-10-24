@@ -8,14 +8,21 @@ public class Bulletin
 {
 	private Integer id;
 	private String memo;
-	private String Bname;
+	private String BName;
 	private Date creationtime;
 	private String flag;
-	public String getBname() {
-		return Bname;
+	public String getMemo() {
+		return memo;
 	}
-	public void setBname(String bname) {
-		Bname = bname;
+
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+	public String getBName() {
+		return BName;
+	}
+	public void setBName(String bname) {
+		BName = bname;
 	}
 	public void setFlag(String flag) {
 		this.flag = flag;

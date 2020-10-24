@@ -2,6 +2,7 @@ package edu.gduf.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import edu.gduf.model.entity.Bulletin;
 import edu.gduf.service.StudentService;
 import edu.gduf.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class LoginController
 				if(t!= null)
 				{
 					String flag="1";
-					List<String> bulletin = loginService.getBulletin(flag);
+					List<Bulletin> bulletin = loginService.getBulletin(flag);
 					session.setAttribute("indentity",teacherService.getTeacher(no).getT_name());
 					session.setAttribute("bulletins",bulletin);
 					session.setAttribute("ID_SESSION",t);
@@ -72,7 +73,7 @@ public class LoginController
 				if(s!= null)
 				{
 					String flag="2";
-					List<String> bulletin = loginService.getBulletin(flag);
+					List<Bulletin> bulletin = loginService.getBulletin(flag);
 					session.setAttribute("indentity",studentService.getStudent(no).getS_name());
 					session.setAttribute("bulletins",bulletin);
 					session.setAttribute("ID_SESSION",s);

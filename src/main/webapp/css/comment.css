@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.alert{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.comments{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.comment{
+    margin: 0 auto;
+    width: 90%;
+    line-height: 40px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: -2px 0px 10px #d6cdcd,   /*左边阴影*/
+                0px -2px 10px #d6cdcd,  /*上边阴影*/
+                2px 0px 10px #d6cdcd,  /*右边阴影*/
+                0px 2px 10px #d6cdcd; /*下边阴影*/
+    transition: box-shadow 0.5s;
+}
+.comment:hover{
+    box-shadow: -10px 0px 25px #d6cdcd,   /*左边阴影*/
+                0px -10px 25px #d6cdcd,  /*上边阴影*/
+                10px 0px 25px #d6cdcd,  /*右边阴影*/
+                0px 10px 25px #d6cdcd; /*下边阴影*/
+}
+.form-group{
+    margin: 0 auto;
+    width: 90%;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 571px;
+}

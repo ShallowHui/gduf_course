@@ -41,6 +41,12 @@
         </nav>
         <div id="body-wrap">
             <div class="content" style="width:1200px">
+                <form action="${pageContext.request.contextPath}/findCoursesLike" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="查询老师或者课程" name="name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                </form>
                 <c:if test="${sessionScope.PageList.courses.size() == 0}">
                     <div class="alert alert-warning">
                         <strong>抱歉！没有查询到信息。</strong>
@@ -52,7 +58,7 @@
                         <c:forEach items="${sessionScope.PageList.courses}" var="course">
                             <tr>
                                 <td>${course.c_no}</td>
-                                <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="#">${course.c_name}</a></td>
+                                <td data-toggle="tooltip" title="${course.c_comment}" data-placement="bottom"><a href="${pageContext.request.contextPath}/courseinfo?cno=${course.c_no}">${course.c_name}</a></td>
                                 <td>${course.ac_time}</td>
                                 <td>${course.hc_time}</td>
                                 <td><button  style="margin-top: 0px" type="button" class="btn btn-primary" onclick="window.location.href='${pageContext.request.contextPath}/selectCourse?cno=${course.c_no}'">申请课程</button></td>
